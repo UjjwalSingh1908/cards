@@ -1,0 +1,11 @@
+.ant-menu-item-selected{
+    color: #1E1E1E!important;
+    font-weight: 500;
+}
+:where(.css-dev-only-do-not-override-1go96qz).ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after, :where(.css-dev-only-do-not-override-1go96qz).ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected::after {
+    /* border-width: auto; */
+    border-bottom-color: #EB4869!important;
+}
+
+
+
