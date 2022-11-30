@@ -1,7 +1,8 @@
 .card-container{
-    width: 30vw;
+    text-transform: capitalize;
+    width: 35vw;
     min-height: 12.3rem;
-    margin: 2rem 1rem;
+    margin: 1rem;
     background: #ffffff;
     border: 1px solid #e6eaee;
     box-sizing: border-box;

@@ -13,6 +13,7 @@ function App() {
     theme={{
       token: {
         colorPrimary: '#EB4869',
+        fontFamily: 'Montserrat',
       },
     }}
   >

@@ -1,0 +1,53 @@
+.cards-container{
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 2rem; 
+}
+
+.subnav{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 1rem;
+
+
+}
+
+.btn{
+    margin-right: 1rem;
+    background-color:  #f0f0f0;
+    color: #8e8e8e;
+    border-radius: 4px;
+    padding: 0.4rem;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.filter-menu{
+    padding: 1rem;
+    background-color: #fff;
+      border: 1px solid #e6eaee;
+      box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08), 0px 1px 6px rgba(0, 0, 0, 0.06);;
+}
+
+.fm-h1{
+
+    border-bottom: 1px solid #e6eaee;
+}
+
+.fm-h2{
+    padding: 0.5rem 0 1rem 0;
+color: #8e8e8e;
+}
+
+.btn-container{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    /* row-gap: 0.5rem!important; */
+
+}
