@@ -3,8 +3,12 @@
 body{
     font-family: Montserrat;
 }
+p{
+    padding: 0 ;
+    margin: 0;
+}
 .container{
-    padding: 1rem;
+    padding: 5rem;
     box-sizing: border-box;
 }
 

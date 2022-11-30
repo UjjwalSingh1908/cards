@@ -4,10 +4,18 @@ import All from "./components/pages/all/All";
 import Blocked from "./components/pages/blocked/Blocked";
 import Your from "./components/pages/your/Your";
 import "./App.css"
+import { ConfigProvider } from 'antd';
 
 
 function App() {
   return (
+    <ConfigProvider
+    theme={{
+      token: {
+        colorPrimary: '#EB4869',
+      },
+    }}
+  >
   
     <div className="container" >
 
@@ -22,6 +30,7 @@ function App() {
     </BrowserRouter>
     
     </div>
+    </ConfigProvider>
   );
 }
 
