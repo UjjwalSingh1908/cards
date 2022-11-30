@@ -16,6 +16,8 @@ const All = () => {
   const [ val, setVal ] = useState(4);
   const [ burn, setBurn ] = useState(false);
   const [ sub, setSub ] = useState(false);
+    // search results
+    const [ results, setResults ] = useState("");
 
 
   useEffect(() => {
@@ -45,9 +47,27 @@ const All = () => {
 
   }
 
+  const find = (value) =>{
+    const list = data.filter((card,idx) => {
+      return card.name.toLowerCase().match(value.toLowerCase()) } );
+      setResults(list);
+  
+  }
+
   let cards;
+  let searchCards = null;
 
   if(data){
+    if(results){
+      searchCards = results.map((data, index) => {
+
+        return (
+    
+      <Card  key={index} data={data} />
+    
+      )})
+    }
+
       if(sub && !burn){
       cards = data.filter((item, idx) => idx < val).filter((card, idx) => card.card_type == "subscription" ).map((data, index) => {
 
@@ -87,7 +107,7 @@ const All = () => {
      <div>
     <Nav active="all" />
     <div className='subnav' >
-    <Search placeholder="input search text"  style={{ width: 200 }} />
+    <Search placeholder="input search text"  style={{ width: 200 }} onSearch={find} />
     
     <Dropdown overlay={ 
     <div className='filter-menu' >
@@ -99,10 +119,9 @@ const All = () => {
       <p className='fm-h2' >Types</p>
 
        
-      <Checkbox checked={burn} onChange={ ()=>setBurn(!burn) }>Burner</Checkbox>
-      <Checkbox checked={sub} onChange={ ()=>setSub(!sub) }>Subscription</Checkbox>
+      <Checkbox checked={burn} onChange={ ()=> { setResults(null); setBurn(!burn) }}>Burner</Checkbox>
+      <Checkbox checked={sub} onChange={ ()=>  { setResults(null); setSub(!sub) }}>Subscription</Checkbox>
       
-
       <div className='btn-container'>
       <Button type="primary" style={{width:"48%"}}>Apply</Button>
     <Button style={{width:"48%"}} onClick={ () => { setBurn(false); setSub(false) } }  >Clear</Button>
@@ -142,9 +161,9 @@ const All = () => {
     >
 
     <div className='cards-container' >
-      
-    {cards}
-   
+    {
+      results ? searchCards : cards
+    }
     </div>
 
     </InfiniteScroll>
