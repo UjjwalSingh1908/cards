@@ -45,6 +45,41 @@ const All = () => {
 
   }
 
+  let cards;
+
+  if(data){
+      if(sub && !burn){
+      cards = data.filter((item, idx) => idx < val).filter((card, idx) => card.card_type == "subscription" ).map((data, index) => {
+
+        return (
+    
+      <Card  key={index} data={data} />
+    
+      )})
+        }
+      else if(!sub && burn){
+      cards = data.filter((item, idx) => idx < val).filter((card, idx) => card.card_type == "burner" ).map((data, index) => {
+
+        return (
+    
+      <Card  key={index} data={data} />
+    
+      )})
+        }
+        else {
+          cards = 
+          data.filter((item, idx) => idx < val).map((data, index) => {
+      
+            return (
+        
+          <Card  key={index} data={data} />
+        
+          )})
+        }
+      }
+   
+ 
+
  
 
   return (
@@ -64,12 +99,12 @@ const All = () => {
       <p className='fm-h2' >Types</p>
 
        
-      <Checkbox checked={burn} onChange={ ()=>setBurn(true) }>Burner</Checkbox>
-      <Checkbox checked={sub} onChange={ ()=>setSub(true) }>Subscription</Checkbox>
+      <Checkbox checked={burn} onChange={ ()=>setBurn(!burn) }>Burner</Checkbox>
+      <Checkbox checked={sub} onChange={ ()=>setSub(!sub) }>Subscription</Checkbox>
       
 
       <div className='btn-container'>
-      <Button type="primary" style={{width:"48%"}} >Apply</Button>
+      <Button type="primary" style={{width:"48%"}}>Apply</Button>
     <Button style={{width:"48%"}} onClick={ () => { setBurn(false); setSub(false) } }  >Clear</Button>
     </div>
 
@@ -108,17 +143,7 @@ const All = () => {
 
     <div className='cards-container' >
       
-    { data ?
-      data.filter((item, idx) => idx < val).map((data, index) => {
-
-        return (
-    
-      <Card  key={index} data={data} />
-    
-      )})
-      :
-      <></>
-    }
+    {cards}
    
     </div>
 
