@@ -23,7 +23,6 @@ npm start
 5. Infinite scroll.
 
 #Folder Structure
-The folder structure is as follows :-
 1. Components folder contains all the UI components like pages, navigation bar, card etc.
 2. App.js contains the routing.
 3. Apiservice contains the mock API from which data is being fetched. 
