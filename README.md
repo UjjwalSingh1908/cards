@@ -15,14 +15,21 @@ $ npm i
 npm start
 ```
 
-#Functionalities Implemented
+# Functionalities Implemented
 1. Fetching data from mockApi and mapping it to cards.
 2. Navigation between tabs through routing.
 3. Filtering on basis of Card type.
 4. Searching on basis of Card Name.
 5. Infinite scroll.
 
-#Folder Structure
+# Folder Structure
 1. Components folder contains all the UI components like pages, navigation bar, card etc.
 2. App.js contains the routing.
 3. Apiservice contains the mock API from which data is being fetched. 
+
+# Deployment
+The project is deployed on netlify. <br/>
+Link to the hosted website : [a link](https://ujjwal-cards.netlify.app/) <br/>
+
+<br/>
+Thankyou :)
